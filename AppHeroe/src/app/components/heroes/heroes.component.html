@@ -1,0 +1,15 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="card-columns" *ngIf="!loading">
+    <div class="card" *ngFor="let Heroe of HeroesRecibidos">
+        <img class="card-img-top" [src]="Heroe.img" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{Heroe.nombre}}</h5>
+            <p class="card-text">{{Heroe.bio}}</p>
+            <p class="card-text"><small class="text-muted">Fecha de aparición: {{Heroe.aparicion}}</small></p>
+            <p class="card-text"><small class="text-muted">{{Heroe.casa}}</small></p>
+
+        </div>
+        <a name="" id="" (click)="SendInformation(Heroe.id)" class="btn btn-outline-primary btn.lg btn-block" role="button">Ver mas...</a>
+    </div>
+
+</div>

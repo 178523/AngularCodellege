@@ -1,0 +1,58 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="card-columns" *ngIf="!loading">
+
+    <div class="card card-cascade card-ecommerce wider" *ngFor="let Producto of ProductosRecibidos">
+
+        <!--Card image-->
+        <div class="view view-cascade overlay">
+            <img class="card-img-top" [src]="Producto.imageUrl" alt="">
+            <a>
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+        <!--/.Card image-->
+
+        <!--Card content-->
+        <div class="card-body card-body-cascade text-center">
+            <!--Category & Title-->
+            <h5>{{Producto.productCode}}</h5>
+            <h4 class="card-title"><strong><a  >{{Producto.productName}}</a></strong></h4>
+
+            <!-- Rating
+            <ul class="rating list-inline row justify-content-center">
+                <li><i class="fa fa-star mr-2"></i></li>
+                <li><i class="fa fa-star mr-2"></i></li>
+                <li><i class="fa fa-star mr-2"></i></li>
+                <li><i class="fa fa-star mr-2"></i></li>
+                <li><i class="fa fa-star mr-2"></i></li>
+            </ul> -->
+
+            <div class="stars-outer">
+                <div class="stars-inner" [style.width]="getWidth(Producto.starRating)"></div>
+            </div>
+
+            <!-- Description
+            <p class="card-text">{{Producto.description}}
+            </p> -->
+
+            <!--Card footer-->
+            <div class="card-footer">
+                <span class="float-left">${{Producto.price}}</span>
+                <span class="float-right">
+          <a data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i></a>
+          
+          <a data-toggle="tooltip" data-placement="top" title="Share"><i class="fa fa-share-alt mr-3" aria-hidden="true"></i></a>
+          <a class="active" data-toggle="tooltip" data-placement="top" title="Added to Wishlist"><i class="fa fa-heart mr-3 text-danger" aria-hidden="true"></i></a>
+        </span>
+
+            </div>
+            <hr>
+            <a name="" id="" (click)="SendInformation(Producto.productId)" class="btn btn-outline-primary btn.lg btn-block" role="button">Ver mas...</a>
+
+        </div>
+        <!--/.Card content-->
+
+    </div>
+
+    <!--/.Card-->
+</div>

@@ -1,0 +1,21 @@
+    * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+    }
+    
+    #navbar {
+        background: rgb(29, 45, 60);
+        color: white;
+    }
+    
+    #navbarSupportedContent,
+    .nav-link {
+        margin-left: 30%;
+    }
+    
+    #img {
+        margin: 0px;
+        height: auto;
+        width: 100%;
+    }

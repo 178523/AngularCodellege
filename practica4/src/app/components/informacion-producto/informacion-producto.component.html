@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-6">
+        <h1>{{ProductoFiltrado.productName}}</h1>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-3">
+        <button type="button" name="" (click)="StoreHome()" id="" class="btn btn-primary btn-lg btn-block ">Regresar</button>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-6 ">
+        <img class="card-img-top" [src]="ProductoFiltrado.imageUrl" alt="Card image cap">
+    </div>
+    <div class="col-6 ">
+        <br>
+        <p><b>Descripción:</b> {{ProductoFiltrado.description}}</p>
+        <hr>
+        <p><b>Fecha de aparición:</b> {{ProductoFiltrado.releaseDate}}</p>
+        <br>
+    </div>
+</div>

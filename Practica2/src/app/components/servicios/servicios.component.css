@@ -1,0 +1,44 @@
+.servicios {
+    height: 100vh;
+    width: 1349px;
+}
+
+#title {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    color: gray;
+}
+
+.franja {
+    width: 10%;
+    height: 10px;
+    background: yellow;
+    margin-left: 45%;
+}
+
+.caja {
+    width: 100%;
+    height: auto;
+}
+
+.col-3,
+.col-4 {
+    margin-top: 20px;
+    background: rgb(247, 244, 244);
+    margin-left: 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: blue;
+}
+
+img {
+    width: 100%;
+}

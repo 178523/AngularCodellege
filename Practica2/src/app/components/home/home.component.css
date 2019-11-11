@@ -1,0 +1,24 @@
+.jumbotron {
+    width: 1349px;
+    height: 170vh;
+    /* background-image: url(./../../../assets/img/grua.gif); */
+    background-image: url(./../../../assets/img/grua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    width: 50%;
+    height: auto;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 15%;
+}

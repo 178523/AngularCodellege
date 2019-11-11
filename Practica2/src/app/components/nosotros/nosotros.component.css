@@ -1,0 +1,42 @@
+#title {
+    width: 100%;
+    text-align: left;
+    font-size: 60px;
+    color: gray;
+}
+
+.row {
+    background: rgb(247, 244, 244);
+}
+
+.franja {
+    width: 35%;
+    height: 10px;
+    background: yellow;
+    margin-left: 1%;
+}
+
+p {
+    text-align: justify;
+}
+
+.nosotros {
+    width: 1349px;
+    height: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#grua {
+    width: auto;
+    height: auto;
+    background-image: url(./../../../assets/img/NosotrosGrua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+img {
+    width: 1349px;
+    height: auto;
+}

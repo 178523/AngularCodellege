@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-12 text-center text-light">
+        <h2>Search</h2>
+        <!-- <img src="./../../../assets/images/lupa.gif" alt=""> -->
+    </div>
+</div>
+
+
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="form-group text-light">
+            <label for="">Filter Search</label>
+            <select #filter class="custom-select" name="" id="">
+                        <option value=null selected>Select one</option>
+                        <option [value]="item" *ngFor="let item of searchFilter">{{item}}</option>
+                    </select>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="form-group text-light">
+            <label for="">Ingresa lo que quieres buscar:</label>
+            <input type="text" class="form-control" #termino (keyup)="search(filter.value,termino.value)" placeholder="Ingresa la busqueda" aria-describedby="helpId">
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <div class="card" *ngFor="let result of searchResults">
+        <!-- TRACK -->
+        <img *ngIf="result.album" class="card-img-top" [src]="result.album?.images[1].url | noImage" alt="">
+
+        <!-- artist -->
+        <img *ngIf="!result.album" class="card-img-top" [src]="result.images[1]?.url | noImage" alt="">
+        <div class="card-body">
+            <h4 class="card-title">{{result.name}}</h4>
+            <!-- Mostrar informacion de cancion -->
+            <div class="contenido" *ngIf="result.album">
+                <p class="card-text">
+                    <b>Artists: </b>
+                    <span class="badge-pill badge-danger" *ngFor="let artist of result.artists">{{artist.name}}</span>
+                </p>
+                <p class="card-text"><small class="text-muted"><b>Duración: </b> {{(((result.duration_ms)/1000)/60)| number:'1.2'}} min</small></p>
+            </div>
+
+            <p *ngIf="!result.album" class="card-text">
+                <button type="button" (click)="GotoArtist(result.id)" name="" id="" class="btn btn-primary btn-lg btn-block">Ver más</button>
+            </p>
+
+            <audio *ngIf="result.album && result.preview_url!=null" [src]="result.preview_url" controls></audio>
+            <!-- Artistas -->
+
+
+        </div>
+    </div>
+
+</div>
