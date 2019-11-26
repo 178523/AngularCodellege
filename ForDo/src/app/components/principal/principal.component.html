@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Cosas por hacer</h1>
+
+        <div class="form-group mt-4">
+            <label for="my-input">Que vamos a hacer</label>
+            <div [formGroup]="Formulario" class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Escribe tu tarea" formControlName="thing" />
+
+                <div class="input-group-append">
+                    <button type="button" *ngIf="Formulario.valid" (click)="ObtenerThing()" id="button-addon2" name="" id="" class="btn btn-outline-success btn-lg btn-block">Guardar Tarea</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-inverse text-center">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Tarea</th>
+                            <th>Fecha de creación</th>
+                            <th>Cambiar status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let thing of Things">
+                            <td scope="row">{{thing.thing}}</td>
+                            <td>{{thing.created_date|date:'dd/MM/yyyy'}}</td>
+                            <td><button type="button" class="btn" [ngClass]="{'btn-outline-success': thing.complete, 'btn-outline-danger':!thing.complete}">
+                                <span *ngIf="!thing.complete">Finalizar Tarea</span>
+                                <span *ngIf="thing.complete">Tarea Finalizada</span>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
